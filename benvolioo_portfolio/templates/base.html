@@ -48,6 +48,7 @@
 
         .fa:hover {
             opacity: 0.7;
+            font-size: 32px;
         }
 
         .fa-twitter {
@@ -60,6 +61,19 @@
           color: white;
         }
 
+        .nav-item a {
+          border-bottom: 3px solid transparent;
+          color: black;
+        }
+
+        .nav-item a:hover {
+          border-bottom: 3px solid black;
+        }
+
+        .nav-link {
+          position: relative;
+          right: 0px;
+        }
 
     </style>
 
@@ -71,27 +85,22 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'index' %}">Marty Rudolf</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'project_index' %}">Projects</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'forum_index' %}">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'resume_view' %}">Resume</a>
-                </li>
-              </ul>
-            </div>
-        </div>
-
+      <div class="container">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link active" href="{% url 'index' %}">Marty Rudolf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'project_index' %}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'forum_index' %}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'resume_view' %}">Resume</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container">
