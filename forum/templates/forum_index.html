@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% block page_content %}
 <div class="col-md-8 offset-md-2">
+    <p></p>
     <h1>Blog Posts</h1>
-    <hr>
     {% for post in posts %}
+    <hr>
     <h2><a href="{% url 'forum_detail' post.pk%}">{{ post.title }}</a></h2>
+    <p></p>
     <small>
-        {{ post.created_on.date }} |&nbsp;
-        Categories:&nbsp;
-        {% for category in post.categories.all %}
-        <a href="{% url 'forum_category' category.name %}">
-            {{ category.name }}
-        </a>&nbsp;
-        {% endfor %}
+        {{ post.created_on.date }}
     </small>
     <p>{{ post.body | slice:":400" }}...</p>
     {% endfor %}
