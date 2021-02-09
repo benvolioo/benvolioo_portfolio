@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../styles/style.css" rel="stylesheet">
-        <meta charset="utf-8">
         <title>Marty Rudolf</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+          width: 100%;
+          height: 100%;
+        }
+        </style>
     </head>
     <body>
         {% extends "base.html" %}
@@ -16,6 +23,16 @@
                 Welcome to my website! I am a third-year Computer Engineering with Software Co-op Option student
                 at the University of Alberta.
             </p>
+        </div>
+        <div id="projects" class="carousel slide" data-ride="carousel">
+           
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="C:\Users\marti\benvolioo_portfolio\images\project1.png" alt="project1" width="1100" height="500">
+              </div>
+            </div>
+
         </div>
         {% endblock %}
     </body>
