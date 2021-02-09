@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .btn:hover {
+                outline: btn-primary;
+            }
+        </style>
+        
         <meta charset="utf-8">
+
         <title>Marty Rudolf</title>
     </head>
     <body>
@@ -12,15 +19,14 @@
         <div class="row">
         {% for project in projects %}
             <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top" src="{% static project.image %}">
+                <div class="card mb-2" >
+                    <a href="{% url 'project_detail' project.pk %}"
+                        class="btn btn-link">
+                        <img class="card-img-top" src="{% static project.image %}">
+                    </a>
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text">{{ project.description }}</p>
-                        <a href="{% url 'project_detail' project.pk %}"
-                        class="btn btn-primary">
-                            Read More
-                        </a>
                     </div>
                 </div>
             </div>
